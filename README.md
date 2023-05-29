@@ -50,7 +50,6 @@ Respecto al backend tiene que ser realizado en Typescript, y tiene ya preinstala
 
 ## Directrices de Negocio
 ### Pasos a seguir
-- Comprobar que los parámetros de entrada son correctos
 - Sacar todas las estaciones de tren por cada destino
 - Cambiar nuestros códigos de estaciones por los códigos de estaciones del proveedor
 - Pedir al proveedor los trenes disponibles (horarios), las acomodaciones disponibles (turista, primera clase, ...) y los precios de cada una (ver documentación servivuelo.pdf). Hay que tener en cuenta los bonus, porque cambia el precio.
