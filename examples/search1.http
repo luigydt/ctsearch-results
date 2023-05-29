@@ -14,11 +14,11 @@ Accept: */*
             "to": "ATCH",
             "date": "2022-12-26"
         }
-        ],
-        "passenger": {
-            "adults": 2,
-            "children": 1,
-            "total": 3
-        },
-        "bonus": []
+    ],
+    "passenger": {
+        "adults": 2,
+        "children": 1,
+        "total": 3
+    },
+    "bonus": []
 }
