@@ -50,8 +50,8 @@ Respecto al backend tiene que ser realizado en Typescript, y tiene ya preinstala
 
 ## Directrices de Negocio
 ### Pasos a seguir
-- Sacar todas las estaciones de tren por cada destino
-- Cambiar nuestros códigos de estaciones por los códigos de estaciones del proveedor
+- Sacar todas las estaciones de tren por cada destino `trainEngine.journey_destination_tree`
+- Cambiar nuestros códigos de estaciones por los códigos de estaciones del proveedor `trainEngine.supplier_station_correlation`
 - Pedir al proveedor los trenes disponibles (horarios), las acomodaciones disponibles (turista, primera clase, ...) y los precios de cada una (ver documentación servivuelo.pdf). Hay que tener en cuenta los bonus, porque cambia el precio.
 - Sacar todas las combinaciones posibles de entre los resultados, por ejemplo, en un viaje Madrid - Barcelona, tenemos varias estaciones como Atocha y Chamartin, habrá varios horarios, y varios tipos de acomodación, una combinación sería: Madrid/Atocha/11:00/Turista - Barcelona/Sans/14:00/Premium
 - Guardar en la base de datos los resultados según nuestra estructura interna, la cual esta tipada como CTSearch en el directorio de types, ahí mismo encontraras cada parámetro explicado.
