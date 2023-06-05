@@ -59,7 +59,7 @@ Respecto al backend tiene que ser realizado en Typescript, y tiene ya preinstala
 ### Parámetros de entrada
 - `journeys`: este parámetro tiene un listado de todos los viajes pedidos por el usuario, por ejemplo: si un usuario quiere ir de Madrid a Barcelona unos dias y volver, vendra un array con 2 elementos, el primero de ida, y el segundo de vuelta
 - `passenger`: Aquí están reflejados la cantidad y tipo de pasajeros
-- `bonus`: Es un array de strings con bonus o descuentos especiales, ejemplo: `['retired']`
+- `bonus`: Es un array de strings con bonus o descuentos especiales, ejemplo: `['retired']`.
 
 Los journey tienen una estación de salida y una de llegada para poder pedir al proveedor, además de una fecha, pero `OJO CUIDADO`, porque no siempre la salida y la llegada son estaciones de tren, a veces, son ciudades, y esto no lo entiende el proveedor.
 

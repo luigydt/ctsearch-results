@@ -5,11 +5,11 @@
       "available": "89"
     },
     {
-      "shipId": "Confort",
+      "type": "Confort",
       "available": "23"
     },
     {
-      "shipId": "Premium",
+      "type": "Premium",
       "available": "12"
     }
   ]
