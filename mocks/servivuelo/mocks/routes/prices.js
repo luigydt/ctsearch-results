@@ -20,7 +20,6 @@ module.exports = [
             if (!req.body.shipID) res.status(500).send('GenericError');
             if (!req.body.departureDate) res.status(500).send('GenericError');
             if (!req.body.accommodation) res.status(500).send('GenericError');
-            console.log(req.query.pax && req.query.bonus);
             if (!req.query.pax) res.status(500).send('GenericError');
             if (req.query.pax !== 'adult' && req.query.bonus) res.status(500).send('GenericError');
 
