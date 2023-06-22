@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 const path = require('node:path');
 // eslint-disable-next-line
-const response = require(path.resolve(__dirname, '../assets/timetables.json'));
+export const response = require(path.resolve(__dirname, '../assets/timetables.json'));
 
 function checkError(port) {
   const valid =

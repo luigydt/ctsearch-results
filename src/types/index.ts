@@ -1,3 +1,5 @@
+import { Document } from 'mongoose';
+
 /** ## Tipado de los parametros de entrada */
 export type Parameters = {
   /** listado de viajes */
@@ -81,3 +83,42 @@ export type CTSearch = {
     };
   };
 };
+
+export interface Journey extends Document {
+  destinationCode: string;
+  destinationTree: string[];
+  arrivalCode: string;
+  arrivalTree: string[];
+  date: string;
+  options: OptionJourney[];
+}
+
+export interface OptionJourney {
+  departure: {
+    date: string;
+    time: string;
+    station: string;
+  };
+  arrival: {
+    date: string;
+    time: string;
+    station: string;
+  };
+  duration: {
+    hour: number;
+    minutes: number;
+  };
+  accommodation: {
+    type: string;
+    passengers: {
+      adults: string;
+      children: string;
+    };
+  };
+  prices;
+}
+
+export interface Suplier_Statin_Correlation extends Document {
+  code: string;
+  suppliers: string[];
+}
