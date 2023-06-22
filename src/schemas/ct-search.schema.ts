@@ -1,6 +1,8 @@
 import { Schema } from 'mongoose';
+import { ParameterSchema } from './parameter.schema';
 
 export const CTSerachSchema = new Schema({
+  parameters: { type: ParameterSchema },
   train: {
     type: { type: String },
     journeys: [

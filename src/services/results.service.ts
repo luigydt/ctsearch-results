@@ -2,11 +2,12 @@ import { CTSearch, Journey, OptionJourney, Parameters } from 'src/types';
 import { TimeTableService } from './timetable/timetables.service';
 import mongoose, { Document, Model } from 'mongoose';
 import { config } from './config';
-import { Journey_Destination_Tree_Schema } from './schemas/journey.schema';
-import { Suplier_Statin_Correlation_Schema } from './schemas/supplier_station_correlation.schema';
+import { Journey_Destination_Tree_Schema } from '../schemas/journey.schema';
+import { Suplier_Statin_Correlation_Schema } from '../schemas/supplier_station_correlation.schema';
 import { AccommodationService } from './accommodation/accommodations.service';
 import { PriceService } from './prices/prices.service';
 import { differenceInMinutes, format } from 'date-fns';
+import { CTSerachSchema } from '../schemas/ct-search.schema';
 
 export class ResultService {
   private timetableService: TimeTableService = new TimeTableService();
@@ -28,8 +29,11 @@ export class ResultService {
     );
 
     //Config DB Results and Colletion/s
-    // const searches = mongoose.createConnection(this.config.searchesDataBase);
-    // const searchResults = searches.model(this.config.collections.results.trainResults);
+    const searches = mongoose.createConnection(this.config.searchesDataBase);
+    const searchResults = searches.model(
+      this.config.collections.results.trainResults,
+      CTSerachSchema,
+    );
 
     const { journeys, passenger, bonus } = params;
     //Variable que almacenará todos los journeys que denden del param, por ejemplo para Mad/ Bcn habrá tantos viajes como estaciones estén disponibles
@@ -167,8 +171,9 @@ export class ResultService {
         }
       }
     }
-
-    return this.createResults(journeyTotal);
+    const results = this.createResults(journeyTotal);
+    searchResults.insertMany(results); //Lo dejo sin await ya que no es totalmente necesario esperar a que se termine
+    return results;
   }
 
   private createResults(journeyTotal: Journey[]): CTSearch[] {

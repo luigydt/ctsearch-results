@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-export const Parameter = new Schema({
+export const ParameterSchema = new Schema({
   journeys: [
     {
       from: { type: String },
